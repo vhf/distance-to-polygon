@@ -22,7 +22,7 @@ var distanceBetweenPoints = function distanceBetweenPoints(_ref, _ref2) {
   return f(Math.sqrt(Math.pow(p1x - p2x, 2) + Math.pow(p1y - p2y, 2)));
 };
 
-var distanceFromLine = function distanceFromLine(_ref5, _ref6) {
+var distanceToLine = function distanceToLine(_ref5, _ref6) {
   var _ref8 = _slicedToArray(_ref5, 2);
 
   var px = _ref8[0];
@@ -48,19 +48,19 @@ var distanceFromLine = function distanceFromLine(_ref5, _ref6) {
 
   var u = ((px - l1x) * xD + (py - l1y) * yD) / (xD * xD + yD * yD);
 
-  var closestPointOnLine = void 0;
+  var closestLine = void 0;
   if (u < 0) {
-    closestPointOnLine = [l1x, l1y];
+    closestLine = [l1x, l1y];
   } else if (u > 1) {
-    closestPointOnLine = [l2x, l2y];
+    closestLine = [l2x, l2y];
   } else {
-    closestPointOnLine = [l1x + u * xD, l1y + u * yD];
+    closestLine = [l1x + u * xD, l1y + u * yD];
   }
 
-  return f(distanceBetweenPoints([px, py], closestPointOnLine));
+  return f(distanceBetweenPoints([px, py], closestLine));
 };
 
-var distanceFromPoly = function distanceFromPoly(_ref9, vertices) {
+var distanceToPolygon = function distanceToPolygon(_ref9, vertices) {
   var _ref10 = _slicedToArray(_ref9, 2);
 
   var px = _ref10[0];
@@ -73,7 +73,7 @@ var distanceFromPoly = function distanceFromPoly(_ref9, vertices) {
     var prevPoint = _ref11.prevPoint;
     var dist = _ref11.dist;
 
-    var currDist = distanceFromLine([px, py], [prevPoint, currPoint]);
+    var currDist = distanceToLine([px, py], [prevPoint, currPoint]);
     var ret = {
       prevPoint: currPoint,
       dist: dist
@@ -87,5 +87,5 @@ var distanceFromPoly = function distanceFromPoly(_ref9, vertices) {
 };
 
 exports.distanceBetweenPoints = distanceBetweenPoints;
-exports.distanceFromLine = distanceFromLine;
-exports.distanceFromPoly = distanceFromPoly;
+exports.distanceToLine = distanceToLine;
+exports.distanceToPolygon = distanceToPolygon;
