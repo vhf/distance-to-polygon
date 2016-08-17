@@ -1,6 +1,6 @@
 {
   "name": "distance-to-polygon",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Compute distance from a point to an arbitrary shaped polygon, line, or point",
   "main": "dist/distance-to-polygon.js",
   "scripts": {
