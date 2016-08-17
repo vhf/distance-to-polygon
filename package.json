@@ -19,7 +19,7 @@
     "polygon"
   ],
   "author": "Victor Felder",
-  "license": "MIT License",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/vhf/distance-to-polygon/issues"
   },
