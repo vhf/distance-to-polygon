@@ -4,10 +4,11 @@
   "description": "Compute distance from a point to an arbitrary shaped polygon, line, or point",
   "main": "dist/distance-to-polygon.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register test/distance-to-polygon.js && npm run build",
+    "test": "npm run lint && mocha --compilers js:babel-core/register test/distance-to-polygon.js && npm run build",
     "build": "babel lib -d dist",
     "coverage": "babel-node node_modules/isparta/bin/isparta cover ./node_modules/mocha/bin/_mocha -- test/distance-to-polygon.js",
-    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
+    "lint": "eslint lib"
   },
   "repository": {
     "type": "git",
