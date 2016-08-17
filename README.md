@@ -1,6 +1,8 @@
 distance-to-polygon
 ===================
 
+[![Build Status](https://travis-ci.org/vhf/distance-to-polygon.svg?branch=master)](https://travis-ci.org/vhf/distance-to-polygon) [![Coverage Status](https://coveralls.io/repos/github/vhf/distance-to-polygon/badge.svg?branch=master)](https://coveralls.io/github/vhf/distance-to-polygon?branch=master)
+
 * a point `p#` is represented as a list like this : `const p1 = [x = 0, y = 0];`
 * `f(x)` is a transformation function applied to the result :
 
